@@ -1,0 +1,15 @@
+.birthday-list {
+    margin: 20px;
+  }
+  
+  .birthday-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .birthday-list li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }

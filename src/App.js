@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import BirthdayList from './BirthdayList';
+import AddBirthday from './AddBirthday';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [birthdays, setBirthdays] = useState([
+    { name: 'Anna Apple', date: '1990-05-15' },
+    { name: 'Jane Smith', date: '1985-10-30' },
+  ]);
+
+  const addBirthday = (birthday) => {
+    setBirthdays([...birthdays, birthday]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <AddBirthday addBirthday={addBirthday} />
+      <BirthdayList birthdays={birthdays} />
     </div>
   );
-}
+};
 
 export default App;
